@@ -195,7 +195,7 @@ function ContactForm() {
             className={classes.linkGithub}
             target="_blank"
           >
-            <Box display="flex" alignItems="center" justifyContent="center" gridGap={10}>
+            <Box display="flex" alignItems="center" justifyContent="center" >
               <Typography>
                 Código fonte no Github
               </Typography>
@@ -211,25 +211,22 @@ function ContactForm() {
 
 
 
+
         <Link
           href="http://www.github.com/pedro-demeu"
           className={classes.linkGithub}
           target="_blank"
         >
-          <Box
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-            gridGap={10}>
-            <CopyrightIcon />
-            <Typography variant="subtitle2" component="h4">
+          <Box display="flex" alignItems="center">
+            <Typography display='inline'>
               pedro-demeu
             </Typography>
-
+            <CopyrightIcon />
           </Box>
+
         </Link>
       </Box>
-    </form>
+    </form >
   )
 }
 
