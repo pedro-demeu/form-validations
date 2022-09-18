@@ -1,19 +1,11 @@
 import React from "react";
 import TextField from "@material-ui/core/TextField";
-import { makeStyles } from "@material-ui/core/styles";
+import { createTheme, makeStyles, MuiThemeProvider } from "@material-ui/core/styles";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import CopyrightIcon from "@material-ui/icons/Copyright";
-import {
-  Button,
-  Box,
-  Typography,
-  createTheme,
-  MuiThemeProvider,
-  Link,
-  Container,
-} from "@material-ui/core";
 import { useFormik } from "formik";
 import * as yup from "yup";
+import { Box, Typography, Link, Button, Container } from "@material-ui/core";
 const useStyles = makeStyles((theme) => ({
   primary: {
     color: "#FFFFFF",
@@ -59,7 +51,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function App() {
+export default function App() {
   const classes = useStyles();
   const theme = createTheme({
     palette: {
@@ -237,5 +229,3 @@ function App() {
     </MuiThemeProvider>
   );
 }
-
-export default App;
