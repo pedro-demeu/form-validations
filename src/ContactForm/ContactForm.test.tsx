@@ -4,7 +4,7 @@ import React from 'react'
 import ContactForm from './ContactForm';
 
 describe("<ContactForm />", () => {
-  it("should validate fullName Input ", async () => {
+  it("should validate FullName Input ", async () => {
     render(<ContactForm />)
     const fullNameInput = screen.getByLabelText(/Nome Completo/i);
     expect(fullNameInput).toBeInTheDocument;
@@ -34,7 +34,7 @@ describe("<ContactForm />", () => {
     const validationMessage = await screen.findByText(/email must be a valid email/i);
     expect(validationMessage).toBeInTheDocument
   })
-  it("should validate 'Age Input' ", async () => {
+  it("should validate Age Input ", async () => {
     render(<ContactForm />)
     const ageInput = screen.getByLabelText('Idade');
     expect(ageInput).toBeInTheDocument;
@@ -53,7 +53,7 @@ describe("<ContactForm />", () => {
     const validationMessage = await screen.findByText(/age must be a positive number/i);
     expect(validationMessage).toBeInTheDocument
   })
-  it("should validate 'Telephone Input' ", async () => {
+  it("should validate Telephone Input ", async () => {
     render(<ContactForm />)
     const telephoneInput = screen.getByLabelText('Número do Whatsapp');
     expect(telephoneInput).toBeInTheDocument;
@@ -72,7 +72,7 @@ describe("<ContactForm />", () => {
     const validationMessage = await screen.findByText(/Phone number is not valid/i);
     expect(validationMessage).toBeInTheDocument
   })
-  it("should validate 'Message Input' ", async () => {
+  it("should validate Message Input ", async () => {
     render(<ContactForm />)
     const messageInput = screen.getByLabelText('Mensagem');
     expect(messageInput).toBeInTheDocument;
