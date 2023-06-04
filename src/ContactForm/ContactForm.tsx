@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import CopyrightIcon from "@material-ui/icons/Copyright";
 import { makeStyles } from "@material-ui/core/styles";
@@ -34,6 +34,13 @@ const useStyles = makeStyles(() => ({
     color: "#FFC933",
     fontWeight: "normal",
     fontFamily: "roboto",
+    fontSize: "1rem",
+  },
+  title: {
+    color: "#FFC933",
+    fontSize: "2rem",
+    fontWeight: "bold",
+    marginBottom: "1rem",
   },
   linkGithub: {
     color: "#FFC933",
@@ -92,16 +99,12 @@ function ContactForm() {
       onSubmit={formik.handleSubmit}
     >
       <Box className={classes.headerForm}>
-        <Typography className={classes.text} variant="h2" component="h1">
+        <Typography className={classes.title} variant="h2" component="h1">
           Área de contato
         </Typography>
-        <Typography
-          className={classes.text}
-          variant="subtitle1"
-          component="h2"
-        >
-          Formulário de validação utilizando React | Typescript | Yup |
-          Formik | Material UI
+        <Typography className={classes.text} variant="subtitle1" component="h2">
+          Formulário de validação utilizando React | Typescript | Yup | Formik |
+          Material UI
         </Typography>
       </Box>
       <Box>
@@ -189,45 +192,50 @@ function ContactForm() {
       </Box>
 
       <Box className={classes.footerForm}>
-        <Typography variant="subtitle2" component="h3">
+        <Box
+          style={{
+            display: "flex",
+            justifyContent: "spaced-between",
+            alignItems: "center",
+            gap: 10
+          }}
+        >
+          <Typography color="primary">Código fonte no Github</Typography>
           <Link
-            href="https://github.com/programecompedro/contact-form-advanced"
+            href="https://github.com/pedro-demeu/form-validations"
             className={classes.linkGithub}
             target="_blank"
           >
-            <Box display="flex" alignItems="center" justifyContent="center" >
-              <Typography>
-                Código fonte no Github
-              </Typography>
-              <ExitToAppIcon />
-            </Box>
+            <ExitToAppIcon />
           </Link>
-        </Typography>
-        <Button variant="contained" color="primary" type="submit">
+        </Box>
+        <Button
+          style={{ width: "200px", height: "40px" }}
+          variant="contained"
+          color="primary"
+          type="submit"
+        >
           Enviar
         </Button>
       </Box>
       <Box className={classes.copyRight}>
-
-
-
-
         <Link
           href="http://www.github.com/pedro-demeu"
           className={classes.linkGithub}
           target="_blank"
         >
-          <Box display="flex" alignItems="center">
-            <Typography display='inline'>
-              pedro-demeu
-            </Typography>
+          <Box style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: 5
+          }}>
+            <Typography display="inline">pedro-demeu</Typography>
             <CopyrightIcon />
           </Box>
-
         </Link>
       </Box>
-    </form >
-  )
+    </form>
+  );
 }
 
-export default ContactForm
+export default ContactForm;
